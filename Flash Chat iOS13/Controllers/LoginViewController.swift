@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
                     self!.showErrorAlert(message: e.localizedDescription)
                 } else {
 //                    DispatchQueue.main.async {
-                    self!.performSegue(withIdentifier: "LoginToChat", sender: self)
+                    self!.performSegue(withIdentifier: K.loginSegue, sender: self)
 //                    }
                 }
 //                guard let strongSelf = self else { return }
