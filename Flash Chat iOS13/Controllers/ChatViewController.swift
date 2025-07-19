@@ -23,6 +23,7 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        tableView.delegate = self
         tableView.dataSource = self
         title = K.appName
         navigationItem.hidesBackButton = true
@@ -42,15 +43,20 @@ class ChatViewController: UIViewController {
     
 }
 
-extension ChatViewController: UITableViewDataSource {
+extension ChatViewController: UITableViewDataSource { //responsible for populating the tableView - telling it how many cells it needs and which cells that put into the tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = messages[indexPath.row].body
         return cell
     }
-    
 }
+
+//extension ChatViewController: UITableViewDelegate { // when tableView interacted with by the user (e.g., selected row)
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(indexPath.row)
+//    }
+//}
