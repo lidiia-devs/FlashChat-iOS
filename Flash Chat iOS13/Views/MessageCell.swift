@@ -15,7 +15,7 @@ class MessageCell: UITableViewCell {
     @IBOutlet weak var rightImageView: UIImageView!
     
     
-    override func awakeFromNib() {
+    override func awakeFromNib() { //simmilar to viewDidLoad. This is gonna be called when we create a new messageCell from xib.
         super.awakeFromNib()
         
         messageBubble.layer.cornerRadius = messageBubble.frame.height / 3
