@@ -333,8 +333,8 @@
                             <constraint firstItem="S6L-hg-cne" firstAttribute="top" secondItem="6YX-ca-E8f" secondAttribute="top" id="sQt-L5-8LV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Q5u-eL-Bgp">
-                        <barButtonItem key="rightBarButtonItem" title="ILog Out" id="x6I-el-WKv">
+                    <navigationItem key="navigationItem" id="Q5u-eL-Bgp" colorLabel="IBBuiltInLabel-Gray">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="x6I-el-WKv">
                             <connections>
                                 <action selector="LogOutPressed:" destination="lwd-AH-u8E" id="ats-pM-5Is"/>
                             </connections>

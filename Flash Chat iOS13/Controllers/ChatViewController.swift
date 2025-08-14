@@ -22,6 +22,14 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground() // or configureWithTransparentBackground()
+        appearance.backgroundColor = UIColor(named: "BrandLightPurple")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "BrandPurple")]
+
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
 //        tableView.delegate = self
         tableView.dataSource = self
         title = K.appName
@@ -37,7 +45,7 @@ class ChatViewController: UIViewController {
             .order(by: K.FStore.dateField)
             .addSnapshotListener { (querySnapshot, error) in
             
-            self.messages = []
+            self.messages = [] //empty the list bc it only the recent message needs to be added
             
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
@@ -75,6 +83,8 @@ class ChatViewController: UIViewController {
                 }
             }
         }
+        messageTextfield.text = ""
+        view.endEditing(true)
     }
     
     

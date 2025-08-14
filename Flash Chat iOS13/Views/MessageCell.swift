@@ -18,6 +18,7 @@ class MessageCell: UITableViewCell {
     override func awakeFromNib() { //simmilar to viewDidLoad. This is gonna be called when we create a new messageCell from xib.
         super.awakeFromNib()
         
+        self.isUserInteractionEnabled = false
         messageBubble.layer.cornerRadius = messageBubble.frame.height / 3
     }
 

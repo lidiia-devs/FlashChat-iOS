@@ -57,6 +57,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" notEnabled="YES"/>
+            </accessibility>
             <connections>
                 <outlet property="label" destination="XJB-dh-llw" id="eES-CV-8r0"/>
                 <outlet property="messageBubble" destination="i0g-fd-xMN" id="K7X-90-WN4"/>

@@ -10,6 +10,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let db = Firestore.firestore() //to check if it works just print db
         print(db)
+        
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
         
         return true
     }
