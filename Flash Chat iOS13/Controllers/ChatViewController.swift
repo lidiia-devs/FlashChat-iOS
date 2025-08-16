@@ -22,17 +22,17 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground() // or configureWithTransparentBackground()
-        appearance.backgroundColor = UIColor(named: "BrandLightPurple")
-        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "BrandPurple")]
+        //let appearance = UINavigationBarAppearance()
+          //  appearance.configureWithOpaqueBackground() // or configureWithTransparentBackground()
+//        appearance.backgroundColor = UIColor(named: "BrandLightPurple")
+//        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "BrandPurple")]
 
-            navigationController?.navigationBar.standardAppearance = appearance
-            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+          //  navigationController?.navigationBar.standardAppearance = appearance
+            //navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
 //        tableView.delegate = self
         tableView.dataSource = self
-        title = K.appName
+     //   title = K.appName
         navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         
@@ -82,11 +82,11 @@ class ChatViewController: UIViewController {
                     print("There was an issue saving data to firestore, \(e) ")
                 } else {
                     print("Successfully saved data to firestore")
+                    self.messageTextfield.text = ""
                 }
             }
+            view.endEditing(true)
         }
-        messageTextfield.text = ""
-        view.endEditing(true)
     }
     
     
